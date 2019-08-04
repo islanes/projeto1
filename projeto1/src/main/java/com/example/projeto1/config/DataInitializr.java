@@ -26,11 +26,16 @@ public class DataInitializr implements ApplicationListener<ContextRefreshedEvent
             createUser("Pedro", "pedro@email.com");
         }
 
-        User user = userRepository.findByName("Isl");
+        /*User user = userRepository.findByName("Isl");
         System.out.println("O nome procurado foi encontrado: " +user.getName());
 
-        User user1 = userRepository.findByEmail("islane@email.com");
+         */
+
+        User user1 = userRepository.findByEmailExemplo("islane@email.com");
         System.out.println("O email procurado foi encontrado: " +user1.getEmail());
+
+        User user2 = userRepository.findByNameIgnoreCaseLike("iSlAne");
+        System.out.println("Nome encontrado com IgnoreCase " +user2.getName());
 
     }
 
